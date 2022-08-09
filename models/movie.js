@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const { VALID_URL_MESSAGE } = require('../utils/constants');
 
 const movieSchema = new mongoose.Schema({
   country: {
     type: String,
-    minlength: 2,
     required: true,
   },
   director: {
     type: String,
-    minlength: 2,
     required: true,
   },
   duration: {
@@ -22,7 +21,6 @@ const movieSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    minlength: 2,
     required: true,
   },
   image: {
@@ -30,7 +28,7 @@ const movieSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: (v) => validator.isURL(v),
-      message: 'Необходимо вставить ссылку',
+      message: VALID_URL_MESSAGE,
     },
   },
   trailerLink: {
@@ -38,7 +36,7 @@ const movieSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: (v) => validator.isURL(v),
-      message: 'Необходимо вставить ссылку',
+      message: VALID_URL_MESSAGE,
     },
   },
   thumbnail: {
@@ -46,7 +44,7 @@ const movieSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: (v) => validator.isURL(v),
-      message: 'Необходимо вставить ссылку',
+      message: VALID_URL_MESSAGE,
     },
   },
   owner: {
@@ -55,9 +53,8 @@ const movieSchema = new mongoose.Schema({
     required: true,
   },
   movieId: {
-    type: String,
+    type: Number,
     required: true,
-    unique: true,
   },
   nameRU: {
     type: String,
