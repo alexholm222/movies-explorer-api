@@ -1,4 +1,10 @@
-const moviesServer = 'mongodb://localhost:27017/moviesdb';
-const port = 3000;
+const {
+  MONGOD_SERVER = 'mongodb://127.0.0.1:27017/moviesdb',
+  PORT = 3000,
+  NODE_ENV,
+  JWT_SECRET,
+} = process.env;
 
-module.exports = { moviesServer, port };
+module.exports = {
+  MONGOD_SERVER, PORT, NODE_ENV, JWT_SECRET,
+};
