@@ -9,10 +9,8 @@ const cors = require('./middlewares/cors');
 const limiter = require('./middlewares/rateLimiter');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routes = require('./routes/index');
-const { dataMovies, port } = require('./utils/config');
 const { SERVER_START } = require('./utils/constants');
-
-const { PORT = port, MONGOD_SERVER = dataMovies } = process.env;
+const { PORT, MONGOD_SERVER } = require('./utils/config');
 
 const app = express();
 

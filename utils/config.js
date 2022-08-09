@@ -1,10 +1,10 @@
 const {
-  dataMovies,
-  port = 3000,
+  MONGOD_SERVER = 'mongodb://localhost:27017/moviesdb',
+  PORT = 3000,
   NODE_ENV,
   JWT_SECRET,
 } = process.env;
 
 module.exports = {
-  dataMovies, port, NODE_ENV, JWT_SECRET,
+  MONGOD_SERVER, PORT, NODE_ENV, JWT_SECRET,
 };
