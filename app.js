@@ -9,7 +9,7 @@ const cors = require('./middlewares/cors');
 const limiter = require('./middlewares/rateLimiter');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const routes = require('./routes/index');
-const { MONGOD_SERVER, PORT } = require('./utils/config');
+const { PORT } = require('./utils/config');
 const { SERVER_START } = require('./utils/constants');
 
 const app = express();
@@ -17,7 +17,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect(MONGOD_SERVER, {
+mongoose.connect('mongodb://127.0.0.1:27017/moviesdb', {
   useNewUrlParser: true,
 });
 
