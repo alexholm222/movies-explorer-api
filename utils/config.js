@@ -1,5 +1,5 @@
 const {
-  MONGOD_SERVER = 'mongodb://localhost:27017/moviesdb',
+  MONGOD_SERVER,
   PORT = 3000,
   NODE_ENV,
   JWT_SECRET,
