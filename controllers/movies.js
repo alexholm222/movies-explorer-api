@@ -45,7 +45,7 @@ module.exports.deleteMovie = (req, res, next) => {
       if (!movie) {
         throw new NotFoundError(NOT_FOUND_MESSAGE_MOVIE);
       }
-      if (String(movie.owner) !== req.user._id) {
+      if (movie.owner !== req.user._id) {
         throw new AccessDeniedError(ACCESS_DENIED_MESSAGE);
       }
       return Movie.findAndRemove({ movieId: req.params._id })
