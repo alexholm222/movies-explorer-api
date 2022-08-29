@@ -34,7 +34,7 @@ const moviepostValid = celebrate({
 
 const moviedeleteValid = celebrate({
   params: Joi.object().keys({
-    _id: Joi.number().required(),
+    _id: Joi.string().required(),
   }),
 });
 
