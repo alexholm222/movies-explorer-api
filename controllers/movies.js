@@ -42,7 +42,8 @@ module.exports.createMovie = (req, res, next) => {
 module.exports.deleteMovie = (req, res, next) => {
   Movie.find({ MovieId: req.params._id })
     .then((movie) => {
-      if (!movie) {
+      res.send(movie);
+      /* if (!movie) {
         throw new NotFoundError(NOT_FOUND_MESSAGE_MOVIE);
       }
       if (String(movie.owner) !== req.user._id) {
@@ -51,7 +52,7 @@ module.exports.deleteMovie = (req, res, next) => {
       return Movie.findAndRemove({ MovieId: req.params._id })
         .then((movieForDelete) => {
           res.send({ data: movieForDelete });
-        });
+        }); */
     })
     .catch((err) => {
       if (err.name === 'CastError') {
