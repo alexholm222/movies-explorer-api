@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://movies.chart.nomoredomains.sbs',
-  'http://movies.chart.nomoredomains.sbs',
+  'https://project-movies.ru',
+  'http://project-movies.ru',
   'http://localhost:3000',
   'https://localhost:3000',
 ];
